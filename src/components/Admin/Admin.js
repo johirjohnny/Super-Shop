@@ -15,7 +15,7 @@ const Admin = () => {
             imageURL: imageURL
         };
 
-        const url = `http://localhost:5000/addBooking`;
+        const url = `https://peaceful-woodland-11045.herokuapp.com/addBooking`;
         //console.log(eventData);
         fetch(url, {
             method: 'POST',

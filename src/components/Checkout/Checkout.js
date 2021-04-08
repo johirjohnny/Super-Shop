@@ -9,7 +9,7 @@ const Checkout = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [checkout, setCheckout] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://peaceful-woodland-11045.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setCheckout(data))
     }, [])
@@ -19,7 +19,7 @@ const Checkout = () => {
 
     const handleOrderSubmit = () => {
         const orderDetails = { ...loggedInUser, product: selectProduct, orderTime: new Date() };
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://peaceful-woodland-11045.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails)
@@ -52,7 +52,7 @@ const Checkout = () => {
             <p>Price : {selectProduct?.price}</p>
             <p>weight : {selectProduct?.weight}</p>
             <button onClick={handleOrderSubmit}>CheckOut</button>
-           
+
 
 
 
